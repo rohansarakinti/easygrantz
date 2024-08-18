@@ -37,7 +37,7 @@ export default async function Page() {
             <HoverCard>
               <HoverCardTrigger asChild>
                 <Link href={grant.grantLink}>
-                  <div className='w-full h-flex lg:h-[18vh] border-2 border-green-600 grid-rows-2 p-4 rounded-lg'>
+                  <div className='w-full h-flex min-h-40 border-2 border-green-600 grid-rows-2 p-4 rounded-lg'>
                     <div className='row-span-1'>
                       <h1 className='text-2xl font-medium'>{grant.name}</h1>
                     </div>
@@ -80,8 +80,8 @@ export default async function Page() {
           </div>
         </TabsContent>
         <TabsList className='w-full h-[15vh] fixed bottom-0 left-0 bg-green-500'>
-          <TabsTrigger value="grants" className='text-3xl hover:text-white mr-10 p-5'>Grants</TabsTrigger>
-          <TabsTrigger value="loans" className='text-3xl hover:text-white l-10 p-5'>Microloans</TabsTrigger>
+          <TabsTrigger value="grants" className='text-3xl hover:text-white mr-10 p-3'>Grants</TabsTrigger>
+          <TabsTrigger value="loans" className='text-3xl hover:text-white l-10 p-3'>Microloans</TabsTrigger>
         </TabsList>
       </Tabs>
     </div>
