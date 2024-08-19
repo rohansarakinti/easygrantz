@@ -26,7 +26,7 @@ export default async function Page() {
   }
 
   return(
-    <div className=' overflow-x-hidden'>
+    <div className='overflow-x-hidden'>
       <div className='w-screen items-center h-[10vh] p-9'>
         <center><h1 className='text-4xl text-green-500 font-semibold underline-offset-8 underline'>Easygrantz Database</h1></center>
       </div>
@@ -37,7 +37,7 @@ export default async function Page() {
             <HoverCard>
               <HoverCardTrigger asChild>
                 <Link href={grant.grantLink}>
-                  <div className='w-full h-flex min-h-40 border-2 border-green-600 grid-rows-2 p-4 rounded-lg'>
+                  <div className='w-full h-auto border-2 border-green-600 grid-rows-2 p-4 rounded-lg'>
                     <div className='row-span-1'>
                       <h1 className='text-2xl font-medium'>{grant.name}</h1>
                     </div>
