@@ -1,5 +1,5 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
 NavigationMenu,
@@ -10,6 +10,8 @@ NavigationMenuList,
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from 'next/image';
+import Logo from '../../app/images/eglogo.png'
 
 export const Header1 = () => {
 const navigationItems = [
@@ -31,6 +33,8 @@ const navigationItems = [
 ];
 
 const [isOpen, setOpen] = useState(false);
+const router = usePathname();
+
 return (
     <header className="w-full z-40 fixed top-0 left-0 bg-background  lg:border-b-2 lg:border-b-gray-200 ">
     <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center mt-5">
@@ -42,7 +46,7 @@ return (
                 {
                     <>
                     <NavigationMenuLink>
-                        <Button asChild variant="ghost" className="border-2 border-green-600">
+                        <Button asChild variant={router!=item.href ? "outline" : "default"} className={router!=item.href ? "border-2 border-green-600": ""}>
                             <Link href={item.href}>{item.title}</Link>
                         </Button>
                     </NavigationMenuLink>
@@ -54,7 +58,7 @@ return (
         </NavigationMenu>
         </div>
         <div className="flex lg:justify-center">
-        <p className="font-semibold text-xl">Easygrantz</p>
+        <p className="font-semibold text-xl">Easygrantz</p><Image src={Logo} className="w-0 md:w-8" alt="Easygrantz Logo"/>
         </div>
         <div className="flex justify-end w-full gap-4">
         <Button disabled variant="ghost" className="hidden md:inline border-2 border-green-600">
