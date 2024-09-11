@@ -1,9 +1,5 @@
-import { createClient } from '@/utils/supabase/server'
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card"
+"use client"
+import { createClient } from '@/lib/supabase'
 import {
   Popover,
   PopoverContent,
@@ -12,24 +8,38 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import Link from 'next/link';
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Header1 } from '@/components/ui/nav';
+import ItemList from '@/components/itemList';
+import { useState, useEffect } from 'react'; 
 
 
 
 export default async function Page() {
 
-  const supabase = createClient()
+  const [microloans, setMicroloans] = useState([])
 
-    
-  let { data: microloans , error } = await supabase.from('microloans').select()
+  async function loadData(){
+    const supabase = createClient()
 
-  if(error) 
-  {
-    console.log(error)  
-    return <p>{JSON.stringify(error)}</p>;
+      
+    let { data , error } = await supabase.from('microloans').select()
+
+    if(error) 
+    {
+      console.log(error)  
+      return <p>{JSON.stringify(error)}</p>;
+    }
+
+    setMicroloans(data)
+    return;
   }
+
+  useEffect(()=>{
+    loadData();
+  }, [])
+
+  
 
   return(
     <>
@@ -129,38 +139,7 @@ export default async function Page() {
             </div>
           </div>
           <div className='col-span-2'>
-                {microloans?.map((microloan:any)=>
-                <div className='mb-5 hover:bg-gray-100 duration-200' key={microloan.id}>
-                  <HoverCard>
-                    <HoverCardTrigger asChild>
-                      <Link href={microloan.grantLink}>
-                        <div className='w-full h-auto border-2 border-green-600 grid-rows-2 p-4 rounded-lg'>
-                          <div className='row-span-1'>
-                            <h1 className='text-2xl font-medium'>{microloan.name}</h1>
-                          </div>
-                          <div className='row-span-1 mt-4'>
-                            <p className='text-lg text-gray-600'>Amount of Money: ${microloan.moneyMin ? microloan.moneyMin : "N/A"} - ${microloan.moneyMax ? microloan.moneyMax : "N/A"}</p>
-                          </div>
-                          <div className='row-span-1 grid grid-cols-3 mt-4 gap-4'>
-                            <div className='col-span-1'>
-                              <p className='text-lg text-gray-600'>Country: {microloan.country ? microloan.country : "N/A"}</p>
-                            </div>
-                            <div className='col-span-1'>
-                              <p className='text-lg text-gray-600'>State: {microloan.state ? microloan.state : "N/A"}</p>
-                            </div>
-                            <div className='col-span-1'>
-                              <p className='text-lg text-gray-600'>City: {microloan.city ? microloan.city : "N/A"}</p>
-                            </div>
-                          </div>         
-                        </div>
-                      </Link>
-                    </HoverCardTrigger>
-                    <HoverCardContent className='w-flex'>
-                      <p>{microloan.notes? microloan.notes : "No notes."}</p>
-                    </HoverCardContent>
-                  </HoverCard>
-                </div>
-                )}
+            <ItemList list={microloans} />
           </div>
         </div>
       </div>
