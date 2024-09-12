@@ -6,11 +6,12 @@ import {
   } from "@/components/ui/hover-card"
 import Link from 'next/link';
 
-export default function ItemList(props) {
+export default function ItemList({list}) {
   return (
     <div>
         {console.log("in list")}
-        {props.list?.map((grant)=>
+        {console.log(list)}
+        {list.map((grant)=>
                 <div className='mb-5 hover:bg-gray-100 duration-200' key={grant.id}>
                   <HoverCard>
                     <HoverCardTrigger asChild>
@@ -42,6 +43,7 @@ export default function ItemList(props) {
                   </HoverCard>
                 </div>
         )}
+        {console.log("Items done")}
     </div>
   )
 }

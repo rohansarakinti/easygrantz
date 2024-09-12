@@ -31,6 +31,7 @@ export default async function Page() {
       return <p>{JSON.stringify(error)}</p>;
     }
 
+    console.log("setting data")
     setMicroloans(data)
     return;
   }
@@ -38,8 +39,6 @@ export default async function Page() {
   useEffect(()=>{
     loadData();
   }, [])
-
-  
 
   return(
     <>
