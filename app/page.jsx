@@ -116,14 +116,14 @@ export default function Page() {
                             If you create an account with us, monthly update emails will be sent to you including grants that meet your criteria.
                             </AccordionContent>
                         </AccordionItem> */}
-                         {/* <AccordionItem  value="index5">
+                         <AccordionItem  value="index5">
                             <AccordionTrigger>
                             What filtering and sorting options can I use to filter/sort out grants?
                             </AccordionTrigger>
                             <AccordionContent>
-                            You can ...
+                            You can sort and filter the grants and microloans by money as well as search by location through our database!
                             </AccordionContent>
-                        </AccordionItem> */}
+                        </AccordionItem>
                     </Accordion>
                     </div>
                 </div>
