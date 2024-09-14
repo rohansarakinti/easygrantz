@@ -6,18 +6,17 @@ import {
   } from "@/components/ui/hover-card"
 import Link from 'next/link';
 
-export default function ItemList({list}) {
+export default function ItemList({list, minMoney, maxMoney, location}) {
   return (
     <div>
-        {console.log(list)}
-        {list.map((item)=>
+        {list.filter((item)=>{return item.moneyMin>=minMoney && item.moneyMax<=maxMoney}).filter((item)=>{return location.toLowerCase() === '' ? item : (item.country ? item.country.toLowerCase().includes(location.toLowerCase()) : false) || (item.state ? item.state.toLowerCase().includes(location.toLowerCase()) : false) || (item.city ? item.city.toLowerCase().includes(location.toLowerCase()) : false)}).map((item)=>
                 <div className='mb-5 hover:bg-gray-100 duration-200' key={item.id}>
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <Link href={`${item.grantLink}`}>
                         <div className='w-full h-auto border-2 border-green-600 grid-rows-2 p-4 rounded-lg'>
                           <div className='row-span-1'>
-                            <h1 className='text-2xl font-medium'>{`${item.name}`}</h1>
+                            <h1 className='text-2xl font-medium'>{item.name}</h1>
                           </div>
                           <div className='row-span-1 mt-4'>
                             <p className='text-lg text-gray-600'>Amount of Money: ${item.moneyMin ? item.moneyMin : "N/A"} - ${item.moneyMax ? item.moneyMax : "N/A"}</p>
@@ -42,7 +41,6 @@ export default function ItemList({list}) {
                   </HoverCard>
                 </div>
         )}
-        {console.log("Items done")}
     </div>
   )
 }

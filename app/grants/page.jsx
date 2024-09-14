@@ -5,7 +5,7 @@ import ClientUI from '../../components/ClientUI';
 async function page() {
     const data = await loadData("grants")
     return (
-        <ClientUI list={data} type={"Grants"} />
+        <ClientUI data={data} type={"Grants"} />
     )
 }
 

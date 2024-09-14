@@ -5,7 +5,7 @@ import ClientUI from '../../components/ClientUI';
 async function page() {
     const data = await loadData("microloans")
     return (
-        <ClientUI list={data} type={"Microloans"} />
+        <ClientUI data={data} type={"Microloans"} />
     )
 }
 

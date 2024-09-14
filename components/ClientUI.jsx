@@ -5,14 +5,15 @@ import SortForm from './SortForm.jsx';
 import ItemList from './itemList.jsx'
 import { useState, useEffect } from 'react';
 
-function ClientUI({list, type}) {
-    const [info, setInfo] = useState([])
+function ClientUI({data, type}) {
+    const [list, setList] = useState([])
     const [minMoney, setMinMoney] = useState(0)
     const [maxMoney, setMaxMoney] = useState(1000000)
+    const [location, setLocation] = useState('');
 
     useEffect(()=>{
-        setInfo(list);
-    })
+        setList(data);
+    }, [])
     
   return (
     <>
@@ -22,11 +23,11 @@ function ClientUI({list, type}) {
         <div className='lg:grid lg:grid-cols-3'>
           <div className='col-span-1 text-center flex-row w-full p-4'>
             <div className='w-full mb-4'>
-              <SortForm list={info} setList={setInfo} minMoney={minMoney} maxMoney={maxMoney} setMinMoney={setMinMoney} setMaxMoney={setMaxMoney}/>
+              <SortForm minMoney={minMoney} maxMoney={maxMoney} setMinMoney={setMinMoney} setMaxMoney={setMaxMoney} location={location} setLocation={setLocation}/>
             </div>
           </div>
           <div className='col-span-2'>
-            <ItemList list={info}/>
+            <ItemList list={list} minMoney={minMoney} maxMoney={maxMoney} location={location}/>
           </div>
         </div>
       </div>
