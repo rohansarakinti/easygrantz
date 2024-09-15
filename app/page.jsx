@@ -39,8 +39,8 @@ export default function Page() {
                             <Button asChild size="lg" className="gap-4 border-2 border-green-600" variant="outline">
                                 <Link href="/grants">Go to Database!</Link>
                             </Button>
-                            <Button disabled size="lg" className="gap-4">
-                                Contact Us!
+                            <Button size="lg" className="gap-4">
+                                <Link href="/contact">Contact Us!</Link>
                             </Button>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ export default function Page() {
                     </div>
                     <div>
                         <Button className="gap-4" variant="outline">
-                            Any questions? Reach out
+                            <Link href="/contact">Any questions? Reach out</Link>
                         </Button>
                     </div>
                     </div>

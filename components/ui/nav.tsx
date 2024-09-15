@@ -61,9 +61,8 @@ return (
         <p className="font-semibold text-xl">Easygrantz</p><Image src={Logo} className="w-0 md:w-8" alt="Easygrantz Logo"/>
         </div>
         <div className="flex justify-end w-full gap-4">
-        <Button disabled variant="ghost" className="hidden md:inline border-2 border-green-600">
-            Contact Us 
-            {/* link google form */}
+        <Button variant="ghost" className="hidden md:inline border-2 border-green-600">
+            <Link href="/contact">Contact Us</Link>
         </Button>
         <div className="border-r hidden md:inline"></div>
         <Button variant="outline" disabled>Sign in</Button>
