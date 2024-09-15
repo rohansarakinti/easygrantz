@@ -108,14 +108,6 @@ export default function Page() {
                             Grants are typically updated every week, to ensure quality in our database.
                             </AccordionContent>
                         </AccordionItem>
-                        {/* <AccordionItem  value="index4">
-                            <AccordionTrigger>
-                            Will I be notified if there are new grants that match my criteria?
-                            </AccordionTrigger>
-                            <AccordionContent>
-                            If you create an account with us, monthly update emails will be sent to you including grants that meet your criteria.
-                            </AccordionContent>
-                        </AccordionItem> */}
                          <AccordionItem  value="index5">
                             <AccordionTrigger>
                             What filtering and sorting options can I use to filter/sort out grants?
