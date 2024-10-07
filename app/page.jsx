@@ -74,12 +74,12 @@ export default function Page() {
                     <h2 className="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 md:text-4xl">Partners</h2>
                     <div className="grid grid-cols-1 gap-8 text-gray-500 sm:gap-12 md:grid-cols-1 lg:grid-cols-1">
                         <a href="https://www.chick-fil-a.com" className="flex justify-center items-center">
-                            <Image src={CFALogo} alt='chick fil a logo'/>
+                            <Image src={CFALogo} alt='chick fil a logo' width={300}/>
                         </a>
                     </div>
                 </div>
             </section>
-            <div className="w-full py-20 lg:py-40">
+            <div className="w-full py-10 lg:py-40">
                 <div className="container mx-auto">
                 <div className="flex flex-col gap-10">
                     <div className="flex text-center justify-center items-center gap-4 flex-col">
