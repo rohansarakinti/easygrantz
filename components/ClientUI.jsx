@@ -19,7 +19,7 @@ function ClientUI({data, type}) {
         if (loading) {
           setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 1500);
         }
     }, [loading])
     
@@ -31,14 +31,14 @@ function ClientUI({data, type}) {
         <>
           <Header1 />
           <div className='overflow-x-hidden py-20 lg:py-40 w-full'>
-            <h1 className='mb-10 text-4xl underline'><center>{type}</center></h1>
+            <h1 className='mb-10 text-6xl font-medium'><center>{type}</center></h1>
             <div className='lg:grid lg:grid-cols-3'>
               <div className='col-span-1 text-center flex-row w-full p-4'>
-                <div className='w-full mb-4'>
+                <div className='w-full mb-4 px-8'>
                   <SortForm minMoney={minMoney} maxMoney={maxMoney} setMinMoney={setMinMoney} setMaxMoney={setMaxMoney} location={location} setLocation={setLocation}/>
                 </div>
               </div>
-              <div className='col-span-2'>
+              <div className='col-span-2 px-6 pr-10'>
                 <ItemList list={list} minMoney={minMoney} maxMoney={maxMoney} location={location}/>
               </div>
             </div>

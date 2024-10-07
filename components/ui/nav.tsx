@@ -30,6 +30,11 @@ const navigationItems = [
         href: "/microloans",
         description: "",
     },
+    {
+        title: "Contact",
+        href: "/contact",
+        description: "",
+    },
 ];
 
 const [isOpen, setOpen] = useState(false);
@@ -61,12 +66,12 @@ return (
         <p className="font-semibold text-xl">Easygrantz</p><Image src={Logo} className="w-0 md:w-8" alt="Easygrantz Logo"/>
         </div>
         <div className="flex justify-end w-full gap-4">
-        <Button variant={router!="/contact" ? "outline" : "default"} className={router!="/contact" ? "border-2 border-green-600": ""}>
-            <Link href="/contact">Contact Us</Link>
-        </Button>
+        {/* <Button variant={router!="/contact" ? "outline" : "default"} className={router!="/contact" ? "border-2 border-green-600 invisible sm:visible": "invisible sm:visible"}>
+            <Link href="/contact">Contact</Link>
+        </Button> */}
         <div className="border-r hidden md:inline"></div>
-        <Button variant="outline" disabled>Sign in</Button>
-        <Button onClick={() => setOpen(!isOpen)}>
+        {/* <Button variant="outline" disabled>Sign in</Button> */}
+        <Button className="" onClick={() => setOpen(!isOpen)}>
             Get started
         </Button>
         </div>

@@ -36,7 +36,7 @@ function Page() {
         if (loading) {
           setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 1500);
         }
       }, [loading]);
 
@@ -69,7 +69,6 @@ function Page() {
                     </form>
                 </div>
             </section>
-            {/* <ContactForm handleSubmit={handleSubmit} /> */}
         </>
         )}
     </>

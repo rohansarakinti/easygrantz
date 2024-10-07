@@ -23,7 +23,7 @@ export default function Page() {
         if (loading) {
           setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 1500);
         }
       }, [loading]);
         
