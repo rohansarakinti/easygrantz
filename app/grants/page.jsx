@@ -1,12 +1,15 @@
 import React from 'react'
-import {loadData} from '../../lib/dataAPI'
-import ClientUI from '../../components/ClientUI';
+import Page from './grantspage.jsx'
 
-async function page() {
-    const data = await loadData("grants")
-    return (
-        <ClientUI data={data} type={"Grants"} />
-    )
+export const metadata = {
+    title: "Grants",
+    description: "Discover grants tailored for students and organizations. EasyGrantz offers a curated selection of grants to help fund your business or nonprofit ventures. Find the right financial support with our simple search and filter tools.",
+  }
+
+function page() {
+  return (
+    <Page />
+  )
 }
 
 export default page

@@ -1,12 +1,15 @@
 import React from 'react'
-import {loadData} from '../../lib/dataAPI'
-import ClientUI from '../../components/ClientUI';
+import Page from './microloanspage.jsx'
 
-async function page() {
-    const data = await loadData("microloans")
-    return (
-        <ClientUI data={data} type={"Microloans"} />
-    )
+export const metadata = {
+    title: "Microloans",
+    description: "Discover microloans tailored for students and organizations. EasyGrantz offers a curated selection of microloans to help fund your business or nonprofit ventures. Find the right financial support with our simple search and filter tools.",
+  }
+
+function page() {
+  return (
+    <Page />
+  )
 }
 
 export default page
